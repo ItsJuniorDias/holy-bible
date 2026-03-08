@@ -8,6 +8,11 @@ export default function TabLayout() {
         <Icon sf="house.fill" md="home" />
       </NativeTabs.Trigger>
 
+      <NativeTabs.Trigger name="genesis">
+        <Icon sf="book.pages" md="book" />
+        <Label>Genesis</Label>
+      </NativeTabs.Trigger>
+
       <NativeTabs.Trigger name="chapter">
         <Icon sf="book.fill" md="book" />
         <Label>Chapter</Label>

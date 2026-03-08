@@ -15,9 +15,9 @@ import {
 import Text from "@/components/text";
 
 // Crie esta função fora do seu componente (ou em um arquivo api.js separado)
-const fetchBookOfJohn = async (translation) => {
+const fetchBookOfGenesis = async (translation) => {
   const metaResponse = await fetch(
-    `https://bible-api.com/data/${translation}/JHN`,
+    `https://bible-api.com/data/${translation}/GEN`,
   );
 
   if (!metaResponse.ok) {
@@ -73,8 +73,8 @@ export default function ChapterListScreen() {
     error,
   } = useQuery({
     // A mágica acontece aqui: se 'translation' mudar, ele refaz a busca automaticamente!
-    queryKey: ["book", "JHN", translation],
-    queryFn: () => fetchBookOfJohn(translation),
+    queryKey: ["book", "GEN", translation],
+    queryFn: () => fetchBookOfGenesis(translation),
   });
 
   useEffect(() => {
@@ -121,7 +121,7 @@ export default function ChapterListScreen() {
             verse: item.verse,
             text: item.text,
             language: translation, // Passando o idioma caso a próxima tela precise
-            type: "JHN", // Passando o tipo do livro para a próxima tela
+            type: "GEN", // Passando o tipo do livro para a próxima tela
           },
         });
       }}
@@ -141,7 +141,7 @@ export default function ChapterListScreen() {
           <View style={styles.headerTopRow}>
             <View>
               <Text weight="medium" style={styles.headerTitle}>
-                {translation === "almeida" ? "João" : "John"}
+                {translation === "almeida" ? "Gênesis" : "Genesis"}
               </Text>
 
               <Text style={styles.subTitle}>
