@@ -7,11 +7,12 @@ import {
   Keyboard,
   StatusBar,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
+
+import Text from "@/components/text";
 
 export default function SearchScreen() {
   const router = useRouter();
@@ -128,7 +129,9 @@ export default function SearchScreen() {
 
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>Pesquisar</Text>
+          <Text weight="medium" style={styles.headerTitle}>
+            Pesquisar
+          </Text>
         </View>
 
         <View style={styles.searchContainer}>
@@ -202,10 +205,10 @@ const styles = StyleSheet.create({
   header: {
     paddingHorizontal: 16,
     paddingTop: 12,
-    paddingBottom: 8,
+    paddingBottom: 16,
   },
   headerTitle: {
-    fontSize: 34,
+    fontSize: 24,
     fontWeight: "700",
     color: "#000000",
     letterSpacing: 0.3,

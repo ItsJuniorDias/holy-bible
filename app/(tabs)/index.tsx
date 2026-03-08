@@ -8,10 +8,11 @@ import {
   FlatList,
   StatusBar,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from "react-native";
+
+import Text from "@/components/text";
 
 // Crie esta função fora do seu componente (ou em um arquivo api.js separado)
 const fetchBookOfJohn = async (translation) => {
@@ -138,9 +139,10 @@ export default function ChapterListScreen() {
         <View style={styles.header}>
           <View style={styles.headerTopRow}>
             <View>
-              <Text style={styles.headerTitle}>
+              <Text weight="medium" style={styles.headerTitle}>
                 {translation === "almeida" ? "João" : "John"}
               </Text>
+
               <Text style={styles.subTitle}>
                 {translation === "almeida"
                   ? "Todos os versículos (Almeida)"
@@ -247,8 +249,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headerTitle: {
-    fontSize: 34,
-    fontWeight: "bold",
+    fontSize: 24,
     color: "#000000",
   },
   subTitle: {
